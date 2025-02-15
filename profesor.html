@@ -3,56 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Profesores - Liceo San José Upala</title>
+    <title>Portal de Profesores</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script defer src="script.js"></script>
 </head>
-<body class="profesor">
+<body>
     <header>
-        <h1 class="animate__animated animate__fadeInDown">PORTAL PROFESORES</h1>
+        <h1>Bienvenido, Profesor</h1>
     </header>
 
-    <div class="container">
-        <div class="grid-container">
-            <!-- Herramientas generadas por JavaScript -->
-        </div>
+    <section class="content">
+        <h2>Accede a tus herramientas de enseñanza</h2>
+        <p>Utiliza el botón de herramientas para gestionar tu aula.</p>
+    </section>
+
+    <!-- Botón flotante -->
+    <button class="floating-btn" onclick="toggleMenu()">⚙️ Herramientas</button>
+
+    <!-- Menú de herramientas -->
+    <div id="tool-menu" class="hidden">
+        <ul>
+            <li><a href="#">📚 Gestión de Clases</a></li>
+            <li><a href="#">📝 Crear y Asignar Tareas</a></li>
+            <li><a href="#">📤 Subir Material de Estudio</a></li>
+            <li><a href="#">📅 Organizar Reuniones</a></li>
+            <li><a href="#">📊 Ver Calificaciones</a></li>
+        </ul>
     </div>
 
     <footer>
-        <div class="footer-info">
-            <p>Creador: Johny Alonso Gutiérrez Zambrana</p>
-            <p>Contacto: +506 61262405</p>
-            <p>"PORTAL ESCOLAR" del Liceo San Jose Upala</p>
-            <p>Plataforma integral para gestión educativa con herramientas digitales para enseñanza y aprendizaje.</p>
-        </div>
+        <p>© 2025 Portal Educativo | Profesores</p>
     </footer>
-
-    <script src="script.js"></script>
-    <script>
-        // Generar 30 herramientas para profesores
-        const herramientasProfesor = [
-            'Gestión de Clases', 'Calificaciones', 'Asistencia', 'Planificador de Lecciones',
-            'Recursos Didácticos', 'Foro Docente', 'Biblioteca Virtual', 'Crear Exámenes',
-            'Informes de Progreso', 'Comunicación con Padres', 'Registro de Conducta',
-            'Seguimiento de Tareas', 'Estadísticas de Aprendizaje', 'Plantillas de Evaluación',
-            'Herramientas Colaborativas', 'Gestión de Proyectos', 'Horario Escolar',
-            'Banco de Preguntas', 'Rubricas de Evaluación', 'Encuestas a Estudiantes',
-            'Registro de Observaciones', 'Gestión de Materiales', 'Calendario Académico',
-            'Sistema de Alertas', 'Portafolio Digital', 'Herramientas de Gamificación',
-            'Análisis de Resultados', 'Gestión de Competencias', 'Creación de Contenidos',
-            'Seguimiento Individual'
-        ];
-
-        const gridContainer = document.querySelector('.grid-container');
-        herramientasProfesor.forEach((herramienta, index) => {
-            gridContainer.innerHTML += `
-                <div class="card animate__animated animate__fadeInUp" style="animation-delay: ${index * 0.1}s">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <h3>${herramienta}</h3>
-                    <button class="btn-profesor">Acceder <i class="fas fa-arrow-right"></i></button>
-                </div>
-            `;
-        });
-    </script>
 </body>
 </html>
