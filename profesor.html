@@ -3,36 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal de Profesores</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Área de Profesores</title>
+    <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <h1 class="title-glow">Bienvenido, Profesor</h1>
+        <h1>Área de Profesores</h1>
     </header>
 
-    <section class="content">
-        <h2>Accede a tus herramientas de enseñanza</h2>
-        <p>Utiliza el botón de herramientas para gestionar tu aula.</p>
-    </section>
-
-    <!-- Botón flotante -->
-    <button class="floating-btn" onclick="toggleMenu()">⚙️ Herramientas</button>
-
-    <!-- Menú de herramientas -->
-    <div id="tool-menu" class="hidden">
+    <button class="tools-btn" onclick="toggleTools()">📂 Herramientas</button>
+    
+    <div id="tools-menu" class="hidden">
         <ul>
-            <li><a href="#">📚 Gestión de Clases</a></li>
-            <li><a href="#">📝 Crear y Asignar Tareas</a></li>
-            <li><a href="#">📤 Subir Material de Estudio</a></li>
-            <li><a href="#">📅 Organizar Reuniones</a></li>
-            <li><a href="#">📊 Ver Calificaciones</a></li>
+            <li><a href="#">Gestión de Clases</a></li>
+            <li><a href="#">Subir Material</a></li>
+            <li><a href="#">Asignar Tareas</a></li>
+            <li><a href="#">Organizar Reuniones</a></li>
         </ul>
     </div>
 
-    <footer>
-        <p>© 2025 Portal Educativo | Profesores</p>
-    </footer>
+    <script>
+        function toggleTools() {
+            document.getElementById("tools-menu").classList.toggle("hidden");
+        }
+    </script>
 </body>
 </html>
