@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal del Colegio</title>
+    <title>Portal Educativo del Colegio</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
@@ -20,39 +20,8 @@
     <section class="choose-role">
         <h2>Selecciona tu perfil</h2>
         <p>Elige si eres Profesor o Estudiante para acceder a las funciones adecuadas.</p>
-        <button onclick="setRole('profesor')">Soy Profesor</button>
-        <button onclick="setRole('estudiante')">Soy Estudiante</button>
-    </section>
-
-    <nav id="menu" class="hidden">
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Sobre Nosotros</a></li>
-            <li><a href="#">Reuniones</a></li>
-            <li><a href="#">Tareas y Proyectos</a></li>
-            <li><a href="#">Exámenes</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </nav>
-
-    <section id="profesor-tools" class="hidden">
-        <h2>Herramientas para Profesores</h2>
-        <ul>
-            <li><a href="#">Gestión de Clases</a></li>
-            <li><a href="#">Crear y Asignar Tareas</a></li>
-            <li><a href="#">Subir Material de Estudio</a></li>
-            <li><a href="#">Organizar Reuniones</a></li>
-            <li><a href="#">Ver Calificaciones</a></li>
-        </ul>
-    </section>
-
-    <section id="estudiante-tools" class="hidden">
-        <h2>Herramientas para Estudiantes</h2>
-        <ul>
-            <li><a href="#">Ver Tareas y Proyectos</a></li>
-            <li><a href="#">Subir Tareas</a></li>
-            <li><a href="#">Acceder a Exámenes</a></li>
-        </ul>
+        <button onclick="redirectToPage('profesor')">Soy Profesor</button>
+        <button onclick="redirectToPage('estudiante')">Soy Estudiante</button>
     </section>
 
     <footer>
