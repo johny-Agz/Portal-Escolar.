@@ -115,3 +115,53 @@ body {
     padding: 0.8rem 2rem;
     border-radius: 20px;
 }
+/* ========== Diseño para PC (AGREGAR AL FINAL DEL ARCHIVO) ========== */
+@media (min-width: 768px) {
+    .container {
+        max-width: 1200px;
+        padding: 2rem;
+    }
+
+    .selector-rol {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+
+    .tarjeta-rol {
+        padding: 3rem;
+    }
+
+    .herramientas-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .herramienta {
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1500px;
+        padding: 3rem;
+    }
+
+    .selector-rol {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4rem;
+    }
+
+    .tarjeta-rol {
+        padding: 4rem;
+    }
+
+    .herramientas-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+    }
+
+    .herramienta {
+        padding: 3rem;
+    }
+}
