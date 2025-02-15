@@ -5,3 +5,7 @@ function redirigirAProfesor() {
 function redirigirAEstudiante() {
     window.location.href = "estudiante.html";
 }
+
+function volverAlInicio() {
+    window.location.href = "index.html";
+}
