@@ -1,3 +1,19 @@
+/* Estilo general */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #000428, #004e92);
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Títulos con brillo */
+.title-glow {
+    font-size: 2rem;
+    text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+}
+
 /* Botón flotante */
 .floating-btn {
     position: fixed;
@@ -9,7 +25,8 @@
     border-radius: 50%;
     font-size: 1.5rem;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
 }
 
 .floating-btn:hover {
@@ -22,11 +39,13 @@
     position: fixed;
     bottom: 80px;
     right: 20px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     color: white;
     padding: 15px;
     border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
     display: none;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 #tool-menu ul {
@@ -40,8 +59,20 @@
 }
 
 #tool-menu ul li a {
-    color: white;
+    color: cyan;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+#tool-menu ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .hidden {
