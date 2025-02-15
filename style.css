@@ -1,51 +1,144 @@
 :root {
-    /* Paleta Morada */
-    --color-primario: #4A148C;      /* Morado oscuro */
-    --color-secundario: #7B1FA2;    /* Morado medio */
-    --color-terciario: #BA68C8;     /* Morado claro */
-    --color-destacado: #E040FB;     /* Morado neón */
-    --color-fondo: #F3E5F5;         /* Fondo claro */
-    --color-texto: #2C0036;         /* Texto oscuro */
-    
-    /* URLs de banners (EDITABLES) */
-    --banner-profesores: url('https://ejemplo.com/banner-profesores.jpg');
-    --banner-estudiantes: url('https://ejemplo.com/banner-estudiantes.jpg');
+    --color-primario: #6A1B9A;
+    --color-secundario: #9C27B0;
+    --color-terciario: #BA68C8;
+    --color-fondo: #F3E5F5;
 }
 
-/* ... (mantén todo el CSS anterior) ... */
-
-/* ========== BANNERS PERSONALIZABLES ========== */
-.banner-seccion {
-    width: 100%;
-    height: 300px;
-    border-radius: 20px;
-    margin: 2rem 0;
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: var(--color-fondo);
+    min-height: 100vh;
 }
 
-#banner-profesores {
-    background-image: var(--banner-profesores);
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-in;
 }
 
-#banner-estudiantes {
-    background-image: var(--banner-estudiantes);
+.titulo-principal {
+    text-align: center;
+    color: var(--color-primario);
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
-/* ========== AJUSTES DE COLORES ESPECÍFICOS ========== */
-.profesor {
-    background: linear-gradient(45deg, var(--color-primario), var(--color-secundario));
+.selector-rol {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
 }
 
-.estudiante {
-    background: linear-gradient(45deg, var(--color-secundario), var(--color-destacado));
+.tarjeta {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.panel-header {
-    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+.tarjeta:hover {
+    transform: translateY(-10px);
+}
+
+.profe-card {
+    border: 3px solid var(--color-primario);
+}
+
+.estudiante-card {
+    border: 3px solid var(--color-secundario);
+}
+
+.brillo-hover {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, 
+        transparent 20%, 
+        rgba(255,255,255,0.3) 50%, 
+        transparent 80%);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.tarjeta:hover .brillo-hover {
+    animation: brillo 1s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes brillo {
+    0% { transform: translate(-50%, -50%) rotate(45deg); }
+    100% { transform: translate(150%, 150%) rotate(45deg); }
+}
+
+/* Estilos paneles */
+.header-profesor {
+    background: var(--color-primario);
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.header-estudiante {
+    background: var(--color-secundario);
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.herramientas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .herramienta {
-    border: 2px solid var(--color-terciario);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.herramienta:hover {
+    transform: scale(1.05);
+}
+
+.animate-pop {
+    animation: popIn 0.5s ease-out;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    80% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.btn-volver {
+    background: var(--color-terciario);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-volver:hover {
+    background: var(--color-secundario);
 }
