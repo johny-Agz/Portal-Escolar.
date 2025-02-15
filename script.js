@@ -1,19 +1,17 @@
-// Redirige a la página correspondiente según el rol (profesor o estudiante)
+// Redirigir a la página de Estudiantes o Profesores
 function redirigirPagina(rol) {
-    if (rol === "profesor") {
-        window.location.href = "profesor.html";  // Redirige a la página de profesores
-    } else if (rol === "estudiante") {
+    if (rol === "estudiante") {
         window.location.href = "estudiante.html";  // Redirige a la página de estudiantes
-    } else {
-        alert("Por favor selecciona un rol válido."); // Si no se selecciona ningún rol válido
+    } else if (rol === "profesor") {
+        window.location.href = "profesor.html";  // Redirige a la página de profesores
     }
 }
 
-// Asignamos los eventos a los botones de los roles (profesor y estudiante)
+// Asignamos los eventos a los botones de selección
 document.getElementById("btnEstudiante").addEventListener("click", function() {
-    redirigirPagina("estudiante");  // Llamada a la función para redirigir a Estudiante
+    redirigirPagina("estudiante");  // Redirige a Estudiante
 });
 
 document.getElementById("btnProfesor").addEventListener("click", function() {
-    redirigirPagina("profesor");  // Llamada a la función para redirigir a Profesor
+    redirigirPagina("profesor");  // Redirige a Profesor
 });
