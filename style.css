@@ -1,167 +1,51 @@
 :root {
-    --color-primario: #2A2D7C;
-    --color-secundario: #42A5F5;
-    --color-terciario: #4CAF50;
-    --color-fondo: #F8F9FA;
-    --color-texto: #2C3E50;
-    --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Paleta Morada */
+    --color-primario: #4A148C;      /* Morado oscuro */
+    --color-secundario: #7B1FA2;    /* Morado medio */
+    --color-terciario: #BA68C8;     /* Morado claro */
+    --color-destacado: #E040FB;     /* Morado neón */
+    --color-fondo: #F3E5F5;         /* Fondo claro */
+    --color-texto: #2C0036;         /* Texto oscuro */
+    
+    /* URLs de banners (EDITABLES) */
+    --banner-profesores: url('https://ejemplo.com/banner-profesores.jpg');
+    --banner-estudiantes: url('https://ejemplo.com/banner-estudiantes.jpg');
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    background: linear-gradient(135deg, var(--color-fondo) 0%, #E8EAF6 100%);
-    color: var(--color-texto);
+/* ... (mantén todo el CSS anterior) ... */
+
+/* ========== BANNERS PERSONALIZABLES ========== */
+.banner-seccion {
+    width: 100%;
+    height: 300px;
+    border-radius: 20px;
+    margin: 2rem 0;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
+#banner-profesores {
+    background-image: var(--banner-profesores);
 }
 
-.titulo-principal {
-    font-size: 2.5rem;
-    color: var(--color-primario);
-    margin-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+#banner-estudiantes {
+    background-image: var(--banner-estudiantes);
 }
 
-.selector-rol {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.tarjeta-rol {
-    background: white;
-    border-radius: 15px;
-    padding: 2rem;
-    transition: all 0.3s ease;
-    box-shadow: var(--sombra);
-    cursor: pointer;
-    border: 3px solid transparent;
-}
-
-.tarjeta-rol:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    border-color: var(--color-secundario);
-}
-
-.boton-rol {
-    display: inline-block;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    margin-top: 1rem;
-    border: none;
-    width: 80%;
-}
-
+/* ========== AJUSTES DE COLORES ESPECÍFICOS ========== */
 .profesor {
-    background: linear-gradient(45deg, var(--color-primario), #3F51B5);
-    color: white;
+    background: linear-gradient(45deg, var(--color-primario), var(--color-secundario));
 }
 
 .estudiante {
-    background: linear-gradient(45deg, var(--color-terciario), #00BCD4);
-    color: white;
+    background: linear-gradient(45deg, var(--color-secundario), var(--color-destacado));
 }
 
-.boton-rol:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Estilos para los paneles */
 .panel-header {
-    background: var(--color-primario);
-    color: white;
-    padding: 2rem;
-    border-radius: 0 0 30px 30px;
-    margin-bottom: 2rem;
-}
-
-.herramientas-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem;
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
 }
 
 .herramienta {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: var(--sombra);
-    transition: all 0.3s ease;
-}
-
-.herramienta:hover {
-    transform: translateY(-3px);
-}
-
-.boton-volver {
-    margin-top: 2rem;
-    background: var(--color-texto);
-    color: white;
-    padding: 0.8rem 2rem;
-    border-radius: 20px;
-}
-/* ========== Diseño para PC (AGREGAR AL FINAL DEL ARCHIVO) ========== */
-@media (min-width: 768px) {
-    .container {
-        max-width: 1200px;
-        padding: 2rem;
-    }
-
-    .selector-rol {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 3rem;
-    }
-
-    .tarjeta-rol {
-        padding: 3rem;
-    }
-
-    .herramientas-container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-    }
-
-    .herramienta {
-        padding: 2rem;
-    }
-}
-
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1500px;
-        padding: 3rem;
-    }
-
-    .selector-rol {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 4rem;
-    }
-
-    .tarjeta-rol {
-        padding: 4rem;
-    }
-
-    .herramientas-container {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 3rem;
-    }
-
-    .herramienta {
-        padding: 3rem;
-    }
+    border: 2px solid var(--color-terciario);
 }
