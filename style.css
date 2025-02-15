@@ -1,188 +1,76 @@
-:root {
-    --color-profesor: #2c3e50;
-    --color-estudiante: #27ae60;
-    --color-footer: #34495e;
-}
-
-* {
+/* General */
+body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
 }
 
-body {
-    background: #f5f6fa;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
+/* Header */
 header {
-    background: linear-gradient(135deg, var(--color-profesor) 0%, #3498db 100%);
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-body.estudiante header {
-    background: linear-gradient(135deg, var(--color-estudiante) 0%, #2ecc71 100%);
-}
-
-.container {
-    flex: 1;
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 20px;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    background: rgba(0, 0, 0, 0.5);
     padding: 20px;
+    font-size: 1.5rem;
 }
 
-.card {
-    background: white;
-    border-radius: 15px;
-    padding: 1.5rem;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* Banner */
+.banner {
+    margin: 40px 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+/* Selección de rol */
+.choose-role {
+    margin: 50px 20px;
 }
 
-.card i {
-    font-size: 2.5rem;
-    color: var(--color-profesor);
-    margin-bottom: 1rem;
-}
-
-body.estudiante .card i {
-    color: var(--color-estudiante);
-}
-
-button {
-    background: var(--color-profesor);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 1rem;
-}
-
-body.estudiante button {
-    background: var(--color-estudiante);
-}
-
-button:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-}
-
-footer {
-    background: var(--color-footer);
-    color: white;
-    padding: 2rem;
-    margin-top: auto;
-}
-
-.footer-info {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    line-height: 1.6;
-}
-
-.animate__animated {
-    animation-duration: 1s;
-}
-
-@media (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .card {
-        margin: 0 10px;
-    }
-}
-/* Agrega esto al final de tu style.css */
-.grid-container {
-    justify-content: center;
-    padding: 2rem;
-}
-
-.card {
-    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
-    border: none;
-    min-height: 200px;
+.button-container {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    overflow: hidden;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
 }
 
-.card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent 20%, rgba(255,255,255,0.3) 50%, transparent 80%);
-    transform: rotate(45deg);
-    transition: all 0.5s;
-}
-
-.card:hover::before {
-    animation: shine 1.5s;
-}
-
-@keyframes shine {
-    0% { left: -50%; }
-    100% { left: 150%; }
-}
-
-.card i {
-    font-size: 2.8rem;
-    margin-bottom: 1.2rem;
-    transition: all 0.3s;
-}
-
-.card h3 {
-    color: #2c3e50;
+.btn {
+    padding: 15px 30px;
     font-size: 1.2rem;
-    margin-bottom: 1rem;
-    min-height: 3em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: #ffcc00;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* Estilos específicos para profesores */
-body.profesor .card {
-    border-left: 5px solid var(--color-profesor);
+.btn:hover {
+    background: #ff9900;
+    transform: scale(1.1);
 }
 
-body.profesor button {
-    background: linear-gradient(135deg, var(--color-profesor) 0%, #2980b9 100%);
+/* Footer */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
 }
 
-/* Estilos específicos para estudiantes */
-body.estudiante .card {
-    border-left: 5px solid var(--color-estudiante);
+/* Animaciones */
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-body.estudiante button {
-    background: linear-gradient(135deg, var(--color-estudiante) 0%, #2ecc71 100%);
+.slide-in {
+    animation: slideIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
