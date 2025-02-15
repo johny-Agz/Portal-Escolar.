@@ -26,12 +26,3 @@ const addParticles = () => {
 }
 
 window.onload = addParticles;
-document.addEventListener('DOMContentLoaded', () => {
-  // Efecto de carga inicial
-  gsap.from('header', {duration: 1, y: -100, opacity: 0});
-  gsap.from('.intro-text', {duration: 1, scale: 0.8, opacity: 0, delay: 0.2});
-  gsap.from('.main-title', {duration: 1, y: 50, opacity: 0, delay: 0.4});
-  gsap.from('.role-selector', {duration: 1, y: 50, opacity: 0, delay: 0.6});
-
-  // ... (el resto del código se mantiene igual) ...
-});
