@@ -1,8 +1,31 @@
-<!-- Después del panel-header -->
-<div class="container">
-    <div class="banner-seccion" id="banner-estudiantes"></div>
-    
-    <div class="herramientas-container">
-        <!-- ... (tus herramientas existentes) ... -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Estudiantil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contenedor">
+        <header class="header-estudiante">
+            <h1>Panel del Estudiante</h1>
+            <button class="btn-volver" onclick="volverAlInicio()">← Volver</button>
+        </header>
+
+        <div class="herramientas">
+            <div class="herramienta animate-pop">
+                <h3>📚 Mis Tareas</h3>
+                <p>Ver asignaciones</p>
+            </div>
+            
+            <div class="herramienta animate-pop">
+                <h3>📊 Calificaciones</h3>
+                <p>Ver resultados</p>
+            </div>
+        </div>
     </div>
-</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
