@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Estudiantil - Portal Educativo</title>
+    <title>Panel del Estudiante - Portal Educativo</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header class="header-estudiante">
+    <header class="header">
         <button class="btn-volver" onclick="volverAlInicio()">
             <i class="fas fa-arrow-left"></i> Volver
         </button>
-        <div class="header-contenido">
-            <h1>Estudiante <span>Portal Educativo</span></h1>
+        <div class="logo">
+            <i class="fas fa-user-graduate"></i>
+            <h1>Panel del Estudiante</h1>
         </div>
     </header>
 
-    <main class="contenedor-herramientas">
-        <!-- Gestión de Aprendizaje (5 herramientas) -->
-        <section class="categoria">
+    <main class="contenedor">
+        <!-- Aprendizaje (5 herramientas) -->
+        <section class="seccion">
             <h2><i class="fas fa-brain"></i> Aprendizaje</h2>
             <div class="grilla-herramientas">
                 <div class="herramienta">
@@ -32,43 +33,85 @@
                     <h3>Clases Grabadas</h3>
                     <p>Repasa las lecciones</p>
                 </div>
-                <!-- Agrega 3 herramientas más aquí -->
+                <div class="herramienta">
+                    <i class="fas fa-book-reader"></i>
+                    <h3>Guías de Estudio</h3>
+                    <p>Material de apoyo</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-flask"></i>
+                    <h3>Laboratorios Virtuales</h3>
+                    <p>Prácticas interactivas</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <h3>Actividades Interactivas</h3>
+                    <p>Aprende jugando</p>
+                </div>
             </div>
         </section>
 
         <!-- Evaluación (5 herramientas) -->
-        <section class="categoria">
+        <section class="seccion">
             <h2><i class="fas fa-clipboard-list"></i> Evaluación</h2>
             <div class="grilla-herramientas">
                 <div class="herramienta">
                     <i class="fas fa-question-circle"></i>
                     <h3>Cuestionarios</h3>
-                    <p>Realiza tests interactivos</p>
+                    <p>Tests interactivos</p>
                 </div>
                 <div class="herramienta">
                     <i class="fas fa-chart-bar"></i>
                     <h3>Progreso Académico</h3>
                     <p>Visualiza tu rendimiento</p>
                 </div>
-                <!-- Agrega 3 herramientas más aquí -->
+                <div class="herramienta">
+                    <i class="fas fa-file-upload"></i>
+                    <h3>Entrega de Trabajos</h3>
+                    <p>Envía tus asignaciones</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-check-double"></i>
+                    <h3>Autoevaluación</h3>
+                    <p>Verifica tu aprendizaje</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-comments"></i>
+                    <h3>Retroalimentación</h3>
+                    <p>Comentarios de profesores</p>
+                </div>
             </div>
         </section>
 
         <!-- Recursos (5 herramientas) -->
-        <section class="categoria">
+        <section class="seccion">
             <h2><i class="fas fa-book"></i> Recursos</h2>
             <div class="grilla-herramientas">
                 <div class="herramienta">
                     <i class="fas fa-file-pdf"></i>
                     <h3>Biblioteca Digital</h3>
-                    <p>Acceso a material de estudio</p>
+                    <p>Acceso a material</p>
                 </div>
                 <div class="herramienta">
                     <i class="fas fa-laptop-code"></i>
-                    <h3>Laboratorios Virtuales</h3>
-                    <p>Prácticas interactivas</p>
+                    <h3>IDE en Línea</h3>
+                    <p>Programación en la nube</p>
                 </div>
-                <!-- Agrega 3 herramientas más aquí -->
+                <div class="herramienta">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Calendario Académico</h3>
+                    <p>Eventos importantes</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-chalkboard"></i>
+                    <h3>Pizarra Virtual</h3>
+                    <p>Espacio colaborativo</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-download"></i>
+                    <h3>Descargas</h3>
+                    <p>Material disponible</p>
+                </div>
             </div>
         </section>
     </main>
