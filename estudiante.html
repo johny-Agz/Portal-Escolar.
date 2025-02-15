@@ -3,35 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel del Estudiante</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Página Estudiante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0044cc;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        main {
+            padding: 20px;
+        }
+        .opciones {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .opcion {
+            background-color: #ffffff;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .opcion:hover {
+            background-color: #f0f0f0;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Panel del Estudiante</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="#">Ver Tareas</a></li>
-                <li><a href="#">Proyectos</a></li>
-                <li><a href="#">Ver Exámenes</a></li>
-                <li><a href="#">Reuniones</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="estudiante-tools">
-        <h2>Herramientas para Estudiantes</h2>
-        <ul>
-            <li><a href="#">📚 Ver Tareas</a></li>
-            <li><a href="#">🎓 Acceder a Proyectos</a></li>
-            <li><a href="#">📝 Ver Exámenes</a></li>
-            <li><a href="#">📅 Participar en Reuniones</a></li>
-        </ul>
-    </section>
+<header>
+    <h1>Bienvenido Estudiante</h1>
+    <p>Aquí puedes encontrar las herramientas para gestionar tus tareas, proyectos y más.</p>
+</header>
 
-    <footer>
-        <p>© 2025 Portal Educativo | Desarrollado para la institución</p>
-    </footer>
+<main>
+    <div class="opciones">
+        <div class="opcion" onclick="mostrarTareas()">
+            <h3>Tareas</h3>
+            <p>Consulta, entrega y revisa tus tareas aquí.</p>
+        </div>
+        <div class="opcion" onclick="mostrarProyectos()">
+            <h3>Proyectos</h3>
+            <p>Accede a tus proyectos y colabora con tus compañeros.</p>
+        </div>
+        <div class="opcion" onclick="mostrarExamenes()">
+            <h3>Exámenes</h3>
+            <p>Realiza exámenes en línea y consulta los resultados.</p>
+        </div>
+        <div class="opcion" onclick="mostrarReuniones()">
+            <h3>Reuniones</h3>
+            <p>Conéctate con tus profesores y compañeros en reuniones virtuales.</p>
+        </div>
+    </div>
+</main>
+
+<script>
+    // Funciones para mostrar cada sección
+    function mostrarTareas() {
+        alert("Accediendo a la sección de tareas...");
+        // Aquí podrías redirigir a una página de tareas o mostrar el contenido relevante
+    }
+
+    function mostrarProyectos() {
+        alert("Accediendo a la sección de proyectos...");
+        // Aquí podrías redirigir a una página de proyectos o mostrar el contenido relevante
+    }
+
+    function mostrarExamenes() {
+        alert("Accediendo a la sección de exámenes...");
+        // Aquí podrías redirigir a una página de exámenes o mostrar el contenido relevante
+    }
+
+    function mostrarReuniones() {
+        alert("Accediendo a las reuniones...");
+        // Aquí podrías redirigir a una página de reuniones o integrar una herramienta de videollamadas
+    }
+</script>
+
 </body>
 </html>
