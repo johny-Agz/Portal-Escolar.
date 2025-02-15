@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Docente - Portal Educativo</title>
+    <title>Panel del Profesor - Portal Educativo</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header class="header-docente">
+    <header class="header">
         <button class="btn-volver" onclick="volverAlInicio()">
             <i class="fas fa-arrow-left"></i> Volver
         </button>
-        <div class="header-contenido">
-            <h1>Panel Docente <span>Portal Educativo</span></h1>
+        <div class="logo">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h1>Panel del Profesor</h1>
         </div>
     </header>
 
-    <main class="contenedor-herramientas">
+    <main class="contenedor">
         <!-- Gestión Académica (10 herramientas) -->
-        <section class="categoria">
+        <section class="seccion">
             <h2><i class="fas fa-book-open"></i> Gestión Académica</h2>
             <div class="grilla-herramientas">
                 <div class="herramienta">
@@ -32,43 +33,160 @@
                     <h3>Subir Materiales</h3>
                     <p>Comparte recursos educativos</p>
                 </div>
-                <!-- Agrega 8 herramientas más aquí -->
+                <div class="herramienta">
+                    <i class="fas fa-users"></i>
+                    <h3>Gestión de Alumnos</h3>
+                    <p>Administra listas de estudiantes</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Proyectos Grupales</h3>
+                    <p>Organiza trabajos colaborativos</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-video"></i>
+                    <h3>Clases Virtuales</h3>
+                    <p>Sala de videoconferencias</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-bell"></i>
+                    <h3>Recordatorios</h3>
+                    <p>Programa notificaciones</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Estadísticas</h3>
+                    <p>Analiza el rendimiento</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-file-invoice"></i>
+                    <h3>Informes</h3>
+                    <p>Genera reportes académicos</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-comments"></i>
+                    <h3>Foros</h3>
+                    <p>Espacios de discusión</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Repositorio Digital</h3>
+                    <p>Almacenamiento en la nube</p>
+                </div>
             </div>
         </section>
 
         <!-- Evaluación (10 herramientas) -->
-        <section class="categoria">
+        <section class="seccion">
             <h2><i class="fas fa-clipboard-check"></i> Evaluación</h2>
             <div class="grilla-herramientas">
                 <div class="herramienta">
                     <i class="fas fa-edit"></i>
-                    <h3>Generador de Exámenes</h3>
-                    <p>Crea evaluaciones automatizadas</p>
+                    <h3>Crear Exámenes</h3>
+                    <p>Diseña evaluaciones personalizadas</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>Banco de Preguntas</h3>
+                    <p>Base de datos de ejercicios</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-stopwatch"></i>
+                    <h3>Exámenes Cronometrados</h3>
+                    <p>Control de tiempo automático</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-check-double"></i>
+                    <h3>Autoevaluación</h3>
+                    <p>Tests de autocomprobación</p>
                 </div>
                 <div class="herramienta">
                     <i class="fas fa-chart-pie"></i>
-                    <h3>Estadísticas de Clase</h3>
-                    <p>Analiza el rendimiento general</p>
+                    <h3>Análisis de Resultados</h3>
+                    <p>Estadísticas detalladas</p>
                 </div>
-                <!-- Agrega 8 herramientas más aquí -->
+                <div class="herramienta">
+                    <i class="fas fa-rubric"></i>
+                    <h3>Rúbricas</h3>
+                    <p>Criterios de calificación</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-file-signature"></i>
+                    <h3>Firmas Digitales</h3>
+                    <p>Validación de documentos</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Curva de Calificaciones</h3>
+                    <p>Ajuste de puntuaciones</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-comment-dots"></i>
+                    <h3>Retroalimentación</h3>
+                    <p>Sistema de comentarios</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Anti Copias</h3>
+                    <p>Detección de plagio</p>
+                </div>
             </div>
         </section>
 
         <!-- Comunicación (10 herramientas) -->
-        <section class="categoria">
+        <section class="seccion">
             <h2><i class="fas fa-comments"></i> Comunicación</h2>
             <div class="grilla-herramientas">
                 <div class="herramienta">
-                    <i class="fas fa-video"></i>
-                    <h3>Reuniones Virtuales</h3>
-                    <p>Video conferencias en tiempo real</p>
+                    <i class="fas fa-mail-bulk"></i>
+                    <h3>Mensajería Masiva</h3>
+                    <p>Comunicación con padres</p>
                 </div>
                 <div class="herramienta">
-                    <i class="fas fa-comment-dots"></i>
-                    <h3>Foros de Discusión</h3>
-                    <p>Espacios de debate académico</p>
+                    <i class="fas fa-blog"></i>
+                    <h3>Blog Académico</h3>
+                    <p>Publicaciones institucionales</p>
                 </div>
-                <!-- Agrega 8 herramientas más aquí -->
+                <div class="herramienta">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Agenda Compartida</h3>
+                    <p>Calendario colaborativo</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-video"></i>
+                    <h3>Reuniones Virtuales</h3>
+                    <p>Video conferencias</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Anuncios</h3>
+                    <p>Panel de notificaciones</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-comment-medical"></i>
+                    <h3>Chat Institucional</h3>
+                    <p>Comunicación en tiempo real</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <h3>Encuestas</h3>
+                    <p>Sistema de votaciones</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-tasks"></i>
+                    <h3>Seguimiento de Tareas</h3>
+                    <p>Monitor de progreso</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Colaboración</h3>
+                    <p>Trabajo en equipo</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-headset"></i>
+                    <h3>Soporte Técnico</h3>
+                    <p>Asistencia inmediata</p>
+                </div>
             </div>
         </section>
     </main>
