@@ -1,23 +1,15 @@
-function redirigirAProfesor() {
-    window.location.href = "profesor.html";
-}
-
-function redirigirAEstudiante() {
-    window.location.href = "estudiante.html";
-}
-
-// Efecto de cursor personalizado
+// Animaciones al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
-    const tarjetas = document.querySelectorAll('.tarjeta');
+    document.querySelector('header').classList.add('animate__fadeInDown');
+});
+
+// Efecto hover para las tarjetas
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mouseover', () => {
+        card.style.transform = 'translateY(-5px)';
+    });
     
-    tarjetas.forEach(tarjeta => {
-        tarjeta.addEventListener('mousemove', (e) => {
-            const rect = tarjeta.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            tarjeta.style.setProperty('--x', `${x}px`);
-            tarjeta.style.setProperty('--y', `${y}px`);
-        });
+    card.addEventListener('mouseout', () => {
+        card.style.transform = 'translateY(0)';
     });
 });
