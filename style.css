@@ -1,28 +1,147 @@
-/* Nuevos estilos para la introducción */
-.intro-text {
-  text-align: center;
-  margin: 2rem auto;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  text-shadow: 0 0 15px var(--tech-blue);
-  animation: textGlow 2s ease-in-out infinite alternate;
-  max-width: 1200px;
-  line-height: 1.2;
-  padding: 1rem;
+:root {
+  --iron-red: #ED1D24;
+  --iron-gold: #FFD700;
+  --iron-dark: #2A2A2A;
+  --tech-blue: #00F3FF;
 }
 
-@keyframes textGlow {
-  from {
-    text-shadow: 0 0 10px var(--tech-blue), 0 0 20px var(--tech-blue);
-  }
-  to {
-    text-shadow: 0 0 20px var(--tech-blue), 0 0 30px var(--tech-blue);
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  background: var(--iron-dark);
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.header {
+  background: linear-gradient(45deg, var(--iron-red), var(--iron-dark));
+  padding: 1rem;
+  box-shadow: 0 0 20px var(--iron-red);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+  margin: 0.5rem;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--iron-gold);
+  transition: 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.main-content {
+  padding: 2rem;
+  min-height: 70vh;
+}
+
+.role-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.role-card {
+  background: rgba(42, 42, 42, 0.9);
+  border: 2px solid var(--iron-red);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.role-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px var(--iron-red);
+}
+
+.role-card h2 {
+  color: var(--iron-gold);
+  margin-bottom: 1rem;
+}
+
+.footer {
+  background: var(--iron-dark);
+  padding: 2rem;
+  text-align: center;
+  border-top: 2px solid var(--iron-red);
 }
 
 @media (max-width: 768px) {
-  .intro-text {
-    font-size: 1.8rem;
-    padding: 0.5rem;
+  .navbar {
+    flex-direction: column;
   }
+  
+  .role-selector {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.tech-element {
+  width: 100px;
+  height: 100px;
+  background: rgba(237, 29, 36, 0.1);
+  position: absolute;
+  border: 2px solid var(--iron-red);
+  border-radius: 15px;
+  animation: float 3s ease-in-out infinite;
 }
