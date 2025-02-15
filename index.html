@@ -3,51 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Escolar</title>
+    <title>Portal Educativo</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script defer src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="contenedor-principal">
-        <header class="header">
-            <div class="logo-container">
-                <div class="logo">
-                    <i class="fas fa-door-open"></i>
-                    <div class="portal-effect"></div>
-                </div>
-                <h1>Portal Escolar</h1>
-            </div>
-        </header>
+    <header>
+        <h1 class="fade-in">Bienvenido al Portal Educativo</h1>
+    </header>
 
-        <main class="main-content">
-            <div class="selector-rol">
-                <!-- Tarjeta Profesor -->
-                <div class="tarjeta profesor" onclick="redirigirAProfesor()">
-                    <div class="tarjeta-content">
-                        <div class="icono">
-                            <i class="fas fa-chalkboard-teacher"></i>
-                        </div>
-                        <h2>Profesor</h2>
-                        <p>Acceso a 30 herramientas profesionales</p>
-                        <div class="hover-effect"></div>
-                    </div>
-                </div>
+    <section class="banner">
+        <h2 class="slide-in">Facilitando el aprendizaje con herramientas digitales</h2>
+    </section>
 
-                <!-- Tarjeta Estudiante -->
-                <div class="tarjeta estudiante" onclick="redirigirAEstudiante()">
-                    <div class="tarjeta-content">
-                        <div class="icono">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <h2>Estudiante</h2>
-                        <p>Acceso a 15 recursos esenciales</p>
-                        <div class="hover-effect"></div>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
+    <section class="choose-role">
+        <h2>Selecciona tu perfil</h2>
+        <p>Elige si eres Profesor o Estudiante para acceder a las funciones adecuadas.</p>
+        <div class="button-container">
+            <button class="btn" onclick="setRole('profesor')">👨‍🏫 Soy Profesor</button>
+            <button class="btn" onclick="setRole('estudiante')">📚 Soy Estudiante</button>
+        </div>
+    </section>
 
-    <script src="script.js"></script>
+    <footer>
+        <p>© 2025 Portal Educativo | Desarrollado para la institución</p>
+    </footer>
 </body>
 </html>
