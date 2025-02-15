@@ -145,31 +145,4 @@ body {
   border-radius: 15px;
   animation: float 3s ease-in-out infinite;
 }
-/* Nuevos estilos para la introducción */
-.intro-text {
-  text-align: center;
-  margin: 2rem auto;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  text-shadow: 0 0 15px var(--tech-blue);
-  animation: textGlow 2s ease-in-out infinite alternate;
-  max-width: 1200px;
-  line-height: 1.2;
-  padding: 1rem;
-}
-
-@keyframes textGlow {
-  from {
-    text-shadow: 0 0 10px var(--tech-blue), 0 0 20px var(--tech-blue);
-  }
-  to {
-    text-shadow: 0 0 20px var(--tech-blue), 0 0 30px var(--tech-blue);
-  }
-}
-
-@media (max-width: 768px) {
-  .intro-text {
-    font-size: 1.8rem;
-    padding: 0.5rem;
-  }
-}
+ Pagina Web creada para el Liceo San Jose de Upala por el estudiante: Johny Alonso Gutierrez Zambrana.
