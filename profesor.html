@@ -3,29 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Docente</title>
+    <title>Panel Docente Profesional</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="contenedor">
-        <header class="header-profesor">
-            <h1>Panel del Profesor</h1>
-            <button class="btn-volver" onclick="volverAlInicio()">← Volver</button>
-        </header>
+    <header class="header-docente">
+        <nav>
+            <button class="btn-volver" onclick="volverAlInicio()">
+                <i class="fas fa-arrow-left"></i> Volver
+            </button>
+            <h1>Panel de Control Docente</h1>
+        </nav>
+    </header>
 
-        <div class="herramientas">
-            <div class="herramienta animate-pop">
-                <h3>📝 Crear Tarea</h3>
-                <p>Asignar nueva actividad</p>
+    <main class="contenedor-herramientas">
+        <!-- Sección Gestión de Clases -->
+        <section class="categoria">
+            <h2><i class="fas fa-book-open"></i> Gestión de Clases</h2>
+            <div class="grilla-herramientas">
+                <div class="herramienta">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Planificador de Clases</h3>
+                    <p>Organiza tu cronograma académico</p>
+                </div>
+                <!-- Repetir 9 herramientas más -->
             </div>
-            
-            <div class="herramienta animate-pop">
-                <h3>📅 Programar Examen</h3>
-                <p>Crear evaluación</p>
-            </div>
-        </div>
-    </div>
+        </section>
 
-    <script src="script.js"></script>
+        <!-- Sección Evaluaciones -->
+        <section class="categoria">
+            <h2><i class="fas fa-clipboard-check"></i> Sistema de Evaluación</h2>
+            <div class="grilla-herramientas">
+                <div class="herramienta">
+                    <i class="fas fa-edit"></i>
+                    <h3>Generador de Exámenes</h3>
+                    <p>Crea evaluaciones automatizadas</p>
+                </div>
+                <!-- Repetir 9 herramientas más -->
+            </div>
+        </section>
+
+        <!-- 3 Secciones más con 10 herramientas cada una -->
+    </main>
 </body>
 </html>
