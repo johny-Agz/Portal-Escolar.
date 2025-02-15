@@ -1,23 +1,19 @@
-// Función que maneja la redirección de acuerdo al rol seleccionado
-function setRole(role) {
-    if (role === "profesor") {
-        // Redirige a la página de profesores
-        window.location.href = "profesor.html"; 
-    } else if (role === "estudiante") {
-        // Redirige a la página de estudiantes
-        window.location.href = "estudiante.html"; 
+// Redirige a la página correspondiente según el rol (profesor o estudiante)
+function redirigirPagina(rol) {
+    if (rol === "profesor") {
+        window.location.href = "profesor.html";  // Redirige a la página de profesores
+    } else if (rol === "estudiante") {
+        window.location.href = "estudiante.html";  // Redirige a la página de estudiantes
     } else {
-        // Si no se selecciona ningún rol válido, se puede mostrar un mensaje o algo por el estilo
-        alert("Por favor, elige un rol.");
+        alert("Por favor selecciona un rol válido."); // Si no se selecciona ningún rol válido
     }
 }
 
-// Añadir evento de clic para el botón de Estudiante
+// Asignamos los eventos a los botones de los roles (profesor y estudiante)
 document.getElementById("btnEstudiante").addEventListener("click", function() {
-    setRole("estudiante");
+    redirigirPagina("estudiante");  // Llamada a la función para redirigir a Estudiante
 });
 
-// Añadir evento de clic para el botón de Profesor
 document.getElementById("btnProfesor").addEventListener("click", function() {
-    setRole("profesor");
+    redirigirPagina("profesor");  // Llamada a la función para redirigir a Profesor
 });
