@@ -1,25 +1,22 @@
-
-// Función para mostrar un mensaje de bienvenida al estudiante
-function mostrarBienvenidaEstudiante() {
-    console.log("¡Bienvenido al portal del estudiante! Aquí tienes tus herramientas.");
+// Función que se ejecuta cuando se elige un rol (profesor o estudiante)
+function setRole(role) {
+    if (role === "profesor") {
+        window.location.href = "profesor.html"; // Redirige a la página de profesores
+    } else if (role === "estudiante") {
+        window.location.href = "estudiante.html"; // Redirige a la página de estudiantes
+    } else {
+        // Si no es ni profesor ni estudiante, muestra el menú
+        document.getElementById("menu").classList.remove("hidden");
+        document.getElementById("profesor-tools").classList.add("hidden");
+        document.getElementById("estudiante-tools").classList.add("hidden");
+    }
 }
 
-// Función para mostrar las herramientas del estudiante (por ejemplo, tareas, proyectos, etc.)
-function mostrarHerramientasEstudiante() {
-    // Lógica para mostrar herramientas específicas
-    const tareas = document.getElementById("tareas");
-    const proyectos = document.getElementById("proyectos");
-    const examenes = document.getElementById("examenes");
-    const reuniones = document.getElementById("reuniones");
+// Esta función se llama cuando se hace clic en "Soy Estudiante" o "Soy Profesor"
+document.getElementById("btnEstudiante").addEventListener("click", function() {
+    setRole("estudiante");
+});
 
-    tareas.style.display = "block";
-    proyectos.style.display = "block";
-    examenes.style.display = "block";
-    reuniones.style.display = "block";
-}
-
-// Llamada a las funciones al cargar la página
-window.onload = function() {
-    mostrarBienvenidaEstudiante();
-    mostrarHerramientasEstudiante();
-}
+document.getElementById("btnProfesor").addEventListener("click", function() {
+    setRole("profesor");
+});
