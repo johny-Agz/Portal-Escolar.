@@ -2,18 +2,35 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Panel de Profesor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel del Profesor</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="panel-header">
         <h1>Panel del Profesor</h1>
-        <div class="herramientas">
-            <a href="#" class="boton">Crear Tarea</a>
-            <a href="#" class="boton">Programar Reunión</a>
-            <a href="#" class="boton">Ver Exámenes</a>
+        <p>Herramientas de gestión académica</p>
+    </div>
+
+    <div class="container">
+        <div class="herramientas-container">
+            <div class="herramienta">
+                <h3>📚 Crear Tarea</h3>
+                <p>Publica nuevas asignaciones para tus estudiantes</p>
+            </div>
+            
+            <div class="herramienta">
+                <h3>🎤 Reuniones</h3>
+                <p>Organiza sesiones virtuales en tiempo real</p>
+            </div>
+            
+            <div class="herramienta">
+                <h3>📊 Calificaciones</h3>
+                <p>Gestiona y publica resultados académicos</p>
+            </div>
         </div>
-        <button onclick="volverAlInicio()">Volver al Inicio</button>
+
+        <button class="boton-volver" onclick="volverAlInicio()">Volver al Inicio</button>
     </div>
 
     <script src="script.js"></script>
