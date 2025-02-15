@@ -3,28 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Estudiantil</title>
+    <title>Entorno Estudiantil Interactivo</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="contenedor">
-        <header class="header-estudiante">
-            <h1>Panel del Estudiante</h1>
-            <button class="btn-volver" onclick="volverAlInicio()">← Volver</button>
-        </header>
-
-        <div class="herramientas">
-            <div class="herramienta animate-pop">
-                <h3>📚 Mis Tareas</h3>
-                <p>Ver asignaciones</p>
-            </div>
-            
-            <div class="herramienta animate-pop">
-                <h3>📊 Calificaciones</h3>
-                <p>Ver resultados</p>
-            </div>
+    <header class="header-estudiante">
+        <button class="btn-volver" onclick="volverAlInicio()">
+            <i class="fas fa-arrow-left"></i> Volver
+        </button>
+        <div class="header-contenido">
+            <h1>Estudiante <span>Edu360</span></h1>
         </div>
-    </div>
+    </header>
+
+    <main class="contenedor-herramientas">
+        <!-- Aprendizaje Activo -->
+        <section class="categoria">
+            <h2><i class="fas fa-brain"></i> Aprendizaje</h2>
+            <div class="grilla-herramientas">
+                <!-- Herramientas 1-5 -->
+                <div class="herramienta">
+                    <i class="fas fa-tasks"></i>
+                    <h3>Tareas Pendientes</h3>
+                    <p>Organiza tus asignaciones</p>
+                </div>
+                <div class="herramienta">
+                    <i class="fas fa-video"></i>
+                    <h3>Clases Grabadas</h3>
+                    <p>Repasa las lecciones</p>
+                </div>
+                <!-- Continuar con 3 más... -->
+            </div>
+        </section>
+
+        <!-- 2 Secciones más con 5 herramientas cada una -->
+    </main>
 
     <script src="script.js"></script>
 </body>
