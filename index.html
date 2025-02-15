@@ -7,13 +7,39 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>¡Bienvenido al Portal del Colegio!</h1>
-        <p>Selecciona tu perfil para continuar:</p>
-        <div class="buttons">
-            <button onclick="window.location.href='profesor.html'">Soy Profesor</button>
-            <button onclick="window.location.href='estudiante.html'">Soy Estudiante</button>
-        </div>
-    </div>
+    <header>
+        <h1>Portal Educativo del Colegio</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="about.html">Sobre Nosotros</a></li>
+                <li><a href="meetings.html">Reuniones</a></li>
+                <li><a href="tasks.html">Tareas y Proyectos</a></li>
+                <li><a href="exams.html">Exámenes</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <h2>Bienvenido al Portal Educativo</h2>
+        <p>Facilitando la educación con herramientas digitales para estudiantes y profesores.</p>
+    </section>
+
+    <section class="info">
+        <h2>¿Qué es esta plataforma?</h2>
+        <p>Este portal está diseñado para brindar apoyo educativo a los estudiantes y docentes de nuestra institución. Aquí encontrarás material de estudio, exámenes, reuniones en línea y más.</p>
+    </section>
+
+    <section class="choose-role">
+        <h2>Selecciona tu perfil</h2>
+        <p>Elige si eres Profesor o Estudiante para acceder a las funciones adecuadas.</p>
+        <button onclick="window.location.href='profesor.html'">Soy Profesor</button>
+        <button onclick="window.location.href='estudiante.html'">Soy Estudiante</button>
+    </section>
+
+    <footer>
+        <p>© 2025 Portal Educativo | Desarrollado para la institución</p>
+    </footer>
 </body>
 </html>
