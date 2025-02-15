@@ -3,45 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Educativo Inteligente</title>
+    <title>Plataforma Educativa Inteligente</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="contenedor-principal">
-        <header class="hero">
-            <h1 class="titulo-neon">Plataforma Educativa 4.0</h1>
-            <p class="subtitulo">Transformando la educación digital</p>
-        </header>
+    <header class="header-principal">
+        <div class="logo">
+            <div class="logo-icono animate-spin">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h1>Edu<span>360</span></h1>
+        </div>
+    </header>
 
+    <main class="contenedor">
         <div class="selector-rol">
             <!-- Tarjeta Profesor -->
             <div class="tarjeta-rol profesor" onclick="redirigirAProfesor()">
-                <div class="icono-rol">
+                <div class="rol-contenido">
                     <i class="fas fa-chalkboard-teacher"></i>
-                </div>
-                <h2>Acceso Docente</h2>
-                <div class="lista-herramientas">
-                    <span><i class="fas fa-check"></i> 30+ Herramientas</span>
-                    <span><i class="fas fa-check"></i> Gestión Completa</span>
-                    <span><i class="fas fa-check"></i> Analíticas Avanzadas</span>
+                    <h2>Acceso Docente</h2>
+                    <div class="contador-herramientas">30+ Herramientas</div>
                 </div>
             </div>
 
             <!-- Tarjeta Estudiante -->
             <div class="tarjeta-rol estudiante" onclick="redirigirAEstudiante()">
-                <div class="icono-rol">
+                <div class="rol-contenido">
                     <i class="fas fa-user-graduate"></i>
-                </div>
-                <h2>Acceso Estudiantil</h2>
-                <div class="lista-herramientas">
-                    <span><i class="fas fa-check"></i> 15+ Herramientas</span>
-                    <span><i class="fas fa-check"></i> Aprendizaje Activo</span>
-                    <span><i class="fas fa-check"></i> Recursos Interactivos</span>
+                    <h2>Acceso Estudiantil</h2>
+                    <div class="contador-herramientas">15+ Herramientas</div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <script src="script.js"></script>
 </body>
