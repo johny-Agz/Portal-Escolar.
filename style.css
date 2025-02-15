@@ -145,3 +145,38 @@ body {
   border-radius: 15px;
   animation: float 3s ease-in-out infinite;
 }
+.tool-btn {
+  background: var(--iron-red);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 2rem auto;
+  display: block;
+  transition: 0.3s;
+}
+
+.tool-btn:hover {
+  background: var(--iron-gold);
+}
+
+.tool-container {
+  display: none;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+}
