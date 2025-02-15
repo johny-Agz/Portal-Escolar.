@@ -9,42 +9,56 @@
 </head>
 <body>
     <header class="header-docente">
-        <nav>
-            <button class="btn-volver" onclick="volverAlInicio()">
-                <i class="fas fa-arrow-left"></i> Volver
-            </button>
-            <h1>Panel de Control Docente</h1>
-        </nav>
+        <button class="btn-volver" onclick="volverAlInicio()">
+            <i class="fas fa-arrow-left"></i> Volver
+        </button>
+        <div class="header-contenido">
+            <h1>Panel Docente <span>Edu360</span></h1>
+        </div>
     </header>
 
     <main class="contenedor-herramientas">
-        <!-- Sección Gestión de Clases -->
+        <!-- Gestión Académica -->
         <section class="categoria">
-            <h2><i class="fas fa-book-open"></i> Gestión de Clases</h2>
+            <h2><i class="fas fa-book-open"></i> Gestión Académica</h2>
             <div class="grilla-herramientas">
+                <!-- Herramientas 1-10 -->
                 <div class="herramienta">
                     <i class="fas fa-calendar-alt"></i>
                     <h3>Planificador de Clases</h3>
                     <p>Organiza tu cronograma académico</p>
                 </div>
-                <!-- Repetir 9 herramientas más -->
+                <div class="herramienta">
+                    <i class="fas fa-file-upload"></i>
+                    <h3>Subir Materiales</h3>
+                    <p>Comparte recursos educativos</p>
+                </div>
+                <!-- Continuar con 8 más... -->
             </div>
         </section>
 
-        <!-- Sección Evaluaciones -->
+        <!-- Evaluación y Seguimiento -->
         <section class="categoria">
-            <h2><i class="fas fa-clipboard-check"></i> Sistema de Evaluación</h2>
+            <h2><i class="fas fa-chart-line"></i> Evaluación</h2>
             <div class="grilla-herramientas">
+                <!-- Herramientas 11-20 -->
                 <div class="herramienta">
-                    <i class="fas fa-edit"></i>
-                    <h3>Generador de Exámenes</h3>
-                    <p>Crea evaluaciones automatizadas</p>
+                    <i class="fas fa-clipboard-check"></i>
+                    <h3>Rúbricas de Evaluación</h3>
+                    <p>Crea criterios de calificación</p>
                 </div>
-                <!-- Repetir 9 herramientas más -->
+                <div class="herramienta">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>Estadísticas de Clase</h3>
+                    <p>Analiza el rendimiento general</p>
+                </div>
+                <!-- Continuar con 8 más... -->
             </div>
         </section>
 
         <!-- 3 Secciones más con 10 herramientas cada una -->
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
