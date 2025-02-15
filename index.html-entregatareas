@@ -1,0 +1,10 @@
+<h2>Entrega de Tareas</h2>
+<form>
+    <label for="student-name">Nombre del Estudiante:</label>
+    <input type="text" id="student-name" required>
+    
+    <label for="task-file">Subir Archivo:</label>
+    <input type="file" id="task-file" required>
+
+    <button type="submit">Enviar Tarea</button>
+</form>
