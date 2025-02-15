@@ -2,30 +2,18 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Educativo del Colegio</title>
+    <title>Instituto - Inicio</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Portal Educativo del Colegio</h1>
-    </header>
+    <div class="container">
+        <h1>Bienvenido al Sistema del Instituto</h1>
+        <div class="selector-rol">
+            <button onclick="redirigirAProfesor()">Soy Profesor</button>
+            <button onclick="redirigirAEstudiante()">Soy Estudiante</button>
+        </div>
+    </div>
 
-    <section class="banner">
-        <h2>Bienvenido al Portal Educativo</h2>
-        <p>Facilitando la educación con herramientas digitales para estudiantes y profesores.</p>
-    </section>
-
-    <section class="choose-role">
-        <h2>Selecciona tu perfil</h2>
-        <p>Elige si eres Profesor o Estudiante para acceder a las funciones adecuadas.</p>
-        <button onclick="redirectToPage('profesor')">Soy Profesor</button>
-        <button onclick="redirectToPage('estudiante')">Soy Estudiante</button>
-    </section>
-
-    <footer>
-        <p>© 2025 Portal Educativo | Desarrollado para la institución</p>
-    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
