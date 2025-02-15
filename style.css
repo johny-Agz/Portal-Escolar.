@@ -1,62 +1,120 @@
 :root {
-    --color-primario: #6A1B9A;
-    --color-secundario: #9C27B0;
-    --color-terciario: #BA68C8;
-    --color-fondo: #F3E5F5;
+    --color-primario: #6C43F5;
+    --color-secundario: #9D50FF;
+    --color-terciario: #C56CFF;
+    --degradado-principal: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+    --sombra: 0 15px 30px rgba(0,0,0,0.15);
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 20px;
-    background: var(--color-fondo);
     min-height: 100vh;
+    background: var(--degradado-principal);
+    color: white;
+    overflow-x: hidden;
 }
 
 .contenedor {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    animation: fadeIn 1s ease-in;
+    padding: 2rem;
 }
 
-.titulo-principal {
+/* Animación de partículas de fondo */
+.fondo-dinamico {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: linear-gradient(45deg, #6C43F530, #9D50FF30);
+}
+
+.particula {
+    position: absolute;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    animation: flotar 20s infinite linear;
+}
+
+@keyframes flotar {
+    0% { transform: translateY(100vh) scale(0); }
+    100% { transform: translateY(-100vh) scale(1); }
+}
+
+/* Tarjetas principales */
+.tarjeta-rol {
+    position: relative;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 3rem;
+    margin: 2rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.tarjeta-rol::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.tarjeta-rol:hover::before {
+    left: 100%;
+}
+
+.tarjeta-rol:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--sombra);
+}
+
+/* Texto neón */
+.titulo-neon {
     text-align: center;
-    color: var(--color-primario);
-    margin-bottom: 50px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    font-size: 4rem;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5),
+                 0 0 20px rgba(255,255,255,0.3),
+                 0 0 30px rgba(255,255,255,0.2);
+    animation: brillo-texto 2s ease-in-out infinite alternate;
 }
 
-.selector-rol {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 20px;
+@keyframes brillo-texto {
+    from { text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+    to { text-shadow: 0 0 20px rgba(255,255,255,0.6),
+                      0 0 30px rgba(255,255,255,0.4); }
 }
 
-.tarjeta {
-    background: white;
+/* Panel de herramientas */
+.herramienta {
+    background: rgba(255,255,255,0.05);
+    padding: 2rem;
     border-radius: 15px;
-    padding: 25px;
+    margin: 1rem;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.tarjeta:hover {
-    transform: translateY(-10px);
+.herramienta:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-5px);
 }
 
-.profe-card {
-    border: 3px solid var(--color-primario);
-}
-
-.estudiante-card {
-    border: 3px solid var(--color-secundario);
-}
-
-.brillo-hover {
+.herramienta::after {
+    content: '';
     position: absolute;
     top: -50%;
     left: -50%;
@@ -64,81 +122,48 @@ body {
     height: 200%;
     background: linear-gradient(45deg, 
         transparent 20%, 
-        rgba(255,255,255,0.3) 50%, 
+        rgba(255,255,255,0.1) 50%, 
         transparent 80%);
-    transition: 0.5s;
-    pointer-events: none;
+    animation: brillo-herramienta 3s infinite linear;
 }
 
-.tarjeta:hover .brillo-hover {
-    animation: brillo 1s forwards;
+@keyframes brillo-herramienta {
+    0% { transform: rotate(45deg) translate(-50%, -50%); }
+    100% { transform: rotate(45deg) translate(50%, 50%); }
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes brillo {
-    0% { transform: translate(-50%, -50%) rotate(45deg); }
-    100% { transform: translate(150%, 150%) rotate(45deg); }
-}
-
-/* Estilos paneles */
-.header-profesor {
-    background: var(--color-primario);
+/* Botones holográficos */
+.btn-holografico {
+    background: none;
+    border: 2px solid rgba(255,255,255,0.3);
     color: white;
-    padding: 2rem;
-    border-radius: 15px;
-    margin-bottom: 2rem;
-}
-
-.header-estudiante {
-    background: var(--color-secundario);
-    color: white;
-    padding: 2rem;
-    border-radius: 15px;
-    margin-bottom: 2rem;
-}
-
-.herramientas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.herramienta {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
     transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
-.herramienta:hover {
-    transform: scale(1.05);
+.btn-holografico::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, 
+        transparent 20%, 
+        rgba(255,255,255,0.2) 50%, 
+        transparent 80%);
+    animation: btn-brillo 3s infinite linear;
 }
 
-.animate-pop {
-    animation: popIn 0.5s ease-out;
+@keyframes btn-brillo {
+    0% { transform: rotate(45deg) translate(-30%, -30%); }
+    100% { transform: rotate(45deg) translate(30%, 30%); }
 }
 
-@keyframes popIn {
-    0% { transform: scale(0); opacity: 0; }
-    80% { transform: scale(1.1); }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-.btn-volver {
-    background: var(--color-terciario);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.btn-volver:hover {
-    background: var(--color-secundario);
+.btn-holografico:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: white;
 }
