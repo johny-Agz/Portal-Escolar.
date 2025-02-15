@@ -2,18 +2,29 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Instituto - Inicio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma Educativa</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Bienvenido al Sistema del Instituto</h1>
+        <h1 class="titulo-principal">Plataforma Educativa Institucional</h1>
+        
         <div class="selector-rol">
-            <button onclick="redirigirAProfesor()">Soy Profesor</button>
-            <button onclick="redirigirAEstudiante()">Soy Estudiante</button>
+            <div class="tarjeta-rol" onclick="redirigirAProfesor()">
+                <h2>Profesor</h2>
+                <p>Acceso a herramientas de gestión académica</p>
+                <button class="boton-rol profesor">Ingresar como Docente</button>
+            </div>
+
+            <div class="tarjeta-rol" onclick="redirigirAEstudiante()">
+                <h2>Estudiante</h2>
+                <p>Acceso a recursos y actividades académicas</p>
+                <button class="boton-rol estudiante">Ingresar como Estudiante</button>
+            </div>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
-</html>
+</ht
