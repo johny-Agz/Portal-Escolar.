@@ -1,17 +1,15 @@
-// Redirigir a la página de Estudiantes o Profesores
-function redirigirPagina(rol) {
-    if (rol === "estudiante") {
-        window.location.href = "estudiante.html";  // Redirige a la página de estudiantes
-    } else if (rol === "profesor") {
-        window.location.href = "profesor.html";  // Redirige a la página de profesores
+// Función que se llama cuando se selecciona un rol (Profesor o Estudiante)
+function setRole(role) {
+    // Ocultar el área de selección de rol
+    document.querySelector('.choose-role').style.display = 'none';
+    
+    // Mostrar el menú
+    document.getElementById('menu').classList.remove('hidden');
+    
+    // Mostrar las herramientas según el rol seleccionado
+    if (role === 'profesor') {
+        document.getElementById('profesor-tools').classList.remove('hidden');
+    } else if (role === 'estudiante') {
+        document.getElementById('estudiante-tools').classList.remove('hidden');
     }
 }
-
-// Asignamos los eventos a los botones de selección
-document.getElementById("btnEstudiante").addEventListener("click", function() {
-    redirigirPagina("estudiante");  // Redirige a Estudiante
-});
-
-document.getElementById("btnProfesor").addEventListener("click", function() {
-    redirigirPagina("profesor");  // Redirige a Profesor
-});
