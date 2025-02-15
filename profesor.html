@@ -3,37 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel del Profesor</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Página de Profesor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2d3436;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            background-color: #dfe6e9;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            margin: 10px;
+            text-decoration: none;
+            color: #2d3436;
+            font-size: 16px;
+        }
+        .container {
+            padding: 20px;
+        }
+        footer {
+            background-color: #2d3436;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Panel del Profesor</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="#">Gestión de Clases</a></li>
-                <li><a href="#">Crear Tareas</a></li>
-                <li><a href="#">Subir Material</a></li>
-                <li><a href="#">Reuniones</a></li>
-                <li><a href="#">Ver Calificaciones</a></li>
-            </ul>
-        </nav>
+        <h1>Bienvenido Profesor</h1>
     </header>
+    
+    <nav>
+        <a href="#gestionarTareas">Gestionar Tareas</a>
+        <a href="#gestionarProyectos">Gestionar Proyectos</a>
+        <a href="#verExamenes">Ver Exámenes</a>
+        <a href="#crearReuniones">Crear Reuniones</a>
+        <a href="#configuraciones">Configuraciones</a>
+    </nav>
 
-    <section class="profesor-tools">
-        <h2>Herramientas para Profesores</h2>
-        <ul>
-            <li><a href="#">📋 Gestión de Clases</a></li>
-            <li><a href="#">📝 Crear y Asignar Tareas</a></li>
-            <li><a href="#">📂 Subir Material de Estudio</a></li>
-            <li><a href="#">📅 Organizar Reuniones</a></li>
-            <li><a href="#">📊 Ver Calificaciones</a></li>
-        </ul>
-    </section>
+    <div class="container">
+        <section id="gestionarTareas">
+            <h2>Gestionar Tareas</h2>
+            <p>Accede a las tareas de los estudiantes y agrégales nuevos retos.</p>
+            <button>Agregar Nueva Tarea</button>
+        </section>
+        
+        <section id="gestionarProyectos">
+            <h2>Gestionar Proyectos</h2>
+            <p>Crea y asigna proyectos para los estudiantes.</p>
+            <button>Agregar Nuevo Proyecto</button>
+        </section>
+        
+        <section id="verExamenes">
+            <h2>Ver Exámenes</h2>
+            <p>Revisa los exámenes pendientes de los estudiantes.</p>
+            <button>Ver Exámenes Pendientes</button>
+        </section>
+        
+        <section id="crearReuniones">
+            <h2>Crear Reuniones</h2>
+            <p>Organiza reuniones de clase o tutorías.</p>
+            <button>Crear Nueva Reunión</button>
+        </section>
+        
+        <section id="configuraciones">
+            <h2>Configuraciones</h2>
+            <p>Ajustes y configuraciones de tu cuenta como profesor.</p>
+            <button>Editar Configuración</button>
+        </section>
+    </div>
 
     <footer>
-        <p>© 2025 Portal Educativo | Desarrollado para la institución</p>
+        <p>&copy; 2025 Plataforma Educativa</p>
     </footer>
 </body>
 </html>
