@@ -1,109 +1,178 @@
-/* Contenedor Principal Mejorado */
-.contenedor {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 2rem;
-    margin: 0 auto;
+:root {
+    --color-primario: #4A148C;
+    --color-secundario: #7B1FA2;
+    --color-terciario: #BA68C8;
+    --color-destacado: #E040FB;
+    --color-fondo: #1A1A2E;
+    --degradado: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
 }
 
-/* Selector de Rol - Diseño Premium */
-.selector-rol {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    width: 100%;
-    max-width: 800px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: var(--color-fondo);
+    color: white;
+    min-height: 100vh;
+}
+
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logo Animado */
+.logo-container {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    background: var(--degradado);
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: portal-glow 3s infinite;
+}
+
+.logo i {
+    font-size: 3rem;
+    color: white;
+    z-index: 2;
+}
+
+.portal-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.1);
+    animation: portal-rotate 8s linear infinite;
+}
+
+@keyframes portal-glow {
+    0% { box-shadow: 0 0 20px var(--color-primario); }
+    50% { box-shadow: 0 0 40px var(--color-destacado); }
+    100% { box-shadow: 0 0 20px var(--color-primario); }
+}
+
+@keyframes portal-rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Selector de Rol */
+.selector-rol {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.tarjeta {
+    width: 300px;
+    height: 400px;
     perspective: 1000px;
 }
 
-.tarjeta-rol {
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px solid var(--color-terciario);
-    border-radius: 20px;
-    padding: 2.5rem;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    transform-style: preserve-3d;
+.tarjeta-content {
     position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    border-radius: 20px;
     overflow: hidden;
-    backdrop-filter: blur(10px);
-    box-shadow: var(--sombra);
 }
 
-.tarjeta-rol::before {
-    content: '';
+.tarjeta:hover .tarjeta-content {
+    transform: rotateY(10deg) rotateX(5deg) translateY(-10px);
+}
+
+.hover-effect {
     position: absolute;
-    top: 0;
-    left: -100%;
     width: 200%;
-    height: 100%;
+    height: 200%;
     background: linear-gradient(
         45deg,
         transparent 25%,
         rgba(255,255,255,0.1) 50%,
         transparent 75%
     );
-    transition: 0.6s;
+    top: -50%;
+    left: -50%;
+    animation: efecto-brillo 3s infinite;
 }
 
-.tarjeta-rol:hover {
-    transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+@keyframes efecto-brillo {
+    from { transform: rotate(45deg) translateX(-100%); }
+    to { transform: rotate(45deg) translateX(100%); }
 }
 
-.tarjeta-rol:hover::before {
-    left: 100%;
+/* Estilos de Tarjetas */
+.tarjeta .tarjeta-content {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Iconos Animados */
-.icono-rol {
-    font-size: 3.5rem;
+.tarjeta .icono {
+    width: 80px;
+    height: 80px;
+    background: var(--degradado);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 1.5rem;
-    display: inline-block;
-    background: var(--degradado-principal);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: flotar 3s ease-in-out infinite;
+    font-size: 2rem;
 }
 
-/* Texto */
-.tarjeta-rol h2 {
+.tarjeta h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    background: linear-gradient(45deg, var(--color-secundario), white);
+    background: linear-gradient(45deg, var(--color-secundario), var(--color-destacado));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.tarjeta-rol p {
+.tarjeta p {
     color: rgba(255,255,255,0.8);
     font-size: 1.1rem;
 }
 
-/* Efecto de Brillo Dinámico */
-@keyframes brillo-border {
-    0% { border-color: var(--color-terciario); }
-    50% { border-color: var(--color-destacado); }
-    100% { border-color: var(--color-terciario); }
-}
-
-.tarjeta-rol {
-    animation: brillo-border 3s infinite;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
-    .selector-rol {
-        grid-template-columns: 1fr;
-        max-width: 400px;
+    .contenedor-principal {
+        padding: 1rem;
     }
     
-    .tarjeta-rol {
-        padding: 2rem;
+    .tarjeta {
+        width: 100%;
+        max-width: 350px;
+        height: 300px;
     }
 }
