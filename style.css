@@ -1,81 +1,71 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    color: #333;
-    text-align: center;
-}
-
-header {
-    background-color: #004080;
-    color: white;
-    padding: 20px;
-}
-
-.banner {
-    background: #0056b3;
-    color: white;
-    padding: 40px;
-    font-size: 18px;
-}
-
-.choose-role {
-    padding: 30px;
-}
-
-button {
-    background-color: #007bff;
-    color: white;
-    padding: 15px 20px;
-    margin: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #003d80;
-}
-
-nav {
-    background-color: #222;
-    padding: 10px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-#profesor-tools {
-    background: white;
-    padding: 20px;
-    margin: 20px auto;
-    width: 80%;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
+/* Estilo básico para ocultar elementos */
 .hidden {
     display: none;
 }
 
-footer {
-    background-color: #222;
-    color: white;
+/* Estilos generales de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2d3436;
+    color: #fff;
     padding: 15px;
-    margin-top: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #2d3436;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+button {
+    background-color: #00b894;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #16a085;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #00b894;
+    font-size: 18px;
+}
+
+ul li a:hover {
+    color: #16a085;
+}
+
+/* Sección de herramientas de Profesor */
+#profesor-tools {
+    background-color: #dfe6e9;
+    padding: 20px;
+}
+
+#estudiante-tools {
+    background-color: #b2bec3;
+    padding: 20px;
 }
