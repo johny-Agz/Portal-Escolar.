@@ -1,9 +1,8 @@
 function setRole(role) {
-    document.getElementById("menu").classList.remove("hidden");
-
     if (role === "profesor") {
-        document.getElementById("profesor-tools").classList.remove("hidden");
+        window.location.href = "profesor.html"; // Redirige a la página de profesores
     } else {
+        document.getElementById("menu").classList.remove("hidden");
         document.getElementById("profesor-tools").classList.add("hidden");
     }
 }
