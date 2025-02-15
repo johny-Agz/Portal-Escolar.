@@ -115,3 +115,74 @@ footer {
         margin: 0 10px;
     }
 }
+/* Agrega esto al final de tu style.css */
+.grid-container {
+    justify-content: center;
+    padding: 2rem;
+}
+
+.card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    border: none;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 20%, rgba(255,255,255,0.3) 50%, transparent 80%);
+    transform: rotate(45deg);
+    transition: all 0.5s;
+}
+
+.card:hover::before {
+    animation: shine 1.5s;
+}
+
+@keyframes shine {
+    0% { left: -50%; }
+    100% { left: 150%; }
+}
+
+.card i {
+    font-size: 2.8rem;
+    margin-bottom: 1.2rem;
+    transition: all 0.3s;
+}
+
+.card h3 {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    min-height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos específicos para profesores */
+body.profesor .card {
+    border-left: 5px solid var(--color-profesor);
+}
+
+body.profesor button {
+    background: linear-gradient(135deg, var(--color-profesor) 0%, #2980b9 100%);
+}
+
+/* Estilos específicos para estudiantes */
+body.estudiante .card {
+    border-left: 5px solid var(--color-estudiante);
+}
+
+body.estudiante button {
+    background: linear-gradient(135deg, var(--color-estudiante) 0%, #2ecc71 100%);
+}
