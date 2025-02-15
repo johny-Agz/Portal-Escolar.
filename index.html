@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plataforma Educativa</title>
+    <title>Portal Educativo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1 class="titulo-principal">Plataforma Educativa Institucional</h1>
+    <div class="contenedor">
+        <h1 class="titulo-principal">Bienvenido al Portal Educativo</h1>
         
         <div class="selector-rol">
-            <div class="tarjeta-rol" onclick="redirigirAProfesor()">
-                <h2>Profesor</h2>
-                <p>Acceso a herramientas de gestión académica</p>
-                <button class="boton-rol profesor">Ingresar como Docente</button>
+            <div class="tarjeta profe-card" onclick="redirigirAProfesor()">
+                <h2>👨🏫 Profesor</h2>
+                <p>Acceso al panel de gestión docente</p>
+                <div class="brillo-hover"></div>
             </div>
-
-            <div class="tarjeta-rol" onclick="redirigirAEstudiante()">
-                <h2>Estudiante</h2>
-                <p>Acceso a recursos y actividades académicas</p>
-                <button class="boton-rol estudiante">Ingresar como Estudiante</button>
+            
+            <div class="tarjeta estudiante-card" onclick="redirigirAEstudiante()">
+                <h2>🎓 Estudiante</h2>
+                <p>Acceso al panel de aprendizaje</p>
+                <div class="brillo-hover"></div>
             </div>
         </div>
     </div>
