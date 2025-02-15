@@ -1,71 +1,47 @@
-/* Estilo básico para ocultar elementos */
-.hidden {
-    display: none;
-}
-
-/* Estilos generales de la página */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
 }
 
-header {
-    background-color: #2d3436;
-    color: #fff;
-    padding: 15px;
+.container {
+    max-width: 800px;
+    margin: 0 auto;
     text-align: center;
 }
 
-footer {
-    background-color: #2d3436;
-    color: white;
-    padding: 10px;
-    text-align: center;
+.selector-rol {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
 }
 
 button {
-    background-color: #00b894;
-    color: white;
-    padding: 10px 20px;
+    padding: 15px 30px;
     font-size: 16px;
-    border: none;
     cursor: pointer;
-    margin: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
 
 button:hover {
-    background-color: #16a085;
+    background-color: #45a049;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+.herramientas {
+    display: grid;
+    gap: 15px;
+    margin: 30px 0;
 }
 
-ul li {
-    margin: 10px 0;
-}
-
-ul li a {
+.boton {
+    padding: 10px;
+    background-color: #008CBA;
+    color: white;
     text-decoration: none;
-    color: #00b894;
-    font-size: 18px;
-}
-
-ul li a:hover {
-    color: #16a085;
-}
-
-/* Sección de herramientas de Profesor */
-#profesor-tools {
-    background-color: #dfe6e9;
-    padding: 20px;
-}
-
-#estudiante-tools {
-    background-color: #b2bec3;
-    padding: 20px;
+    border-radius: 4px;
 }
