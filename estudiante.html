@@ -3,93 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Estudiante</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #00b894;
-            color: #fff;
-            padding: 15px;
-            text-align: center;
-        }
-        nav {
-            background-color: #dfe6e9;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            margin: 10px;
-            text-decoration: none;
-            color: #00b894;
-            font-size: 16px;
-        }
-        .container {
-            padding: 20px;
-        }
-        footer {
-            background-color: #00b894;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-    </style>
+    <title>Herramientas para Estudiantes</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Bienvenido Estudiante</h1>
+        <h1>Herramientas para Estudiantes</h1>
     </header>
-    
+
     <nav>
-        <a href="#" onclick="window.location.href='estudiante.html'">Inicio</a>
-        <a href="#verTareas">Ver Tareas</a>
-        <a href="#verProyectos">Ver Proyectos</a>
-        <a href="#verExamenes">Ver Exámenes</a>
-        <a href="#verReuniones">Ver Reuniones</a>
-        <a href="#configuraciones">Configuraciones</a>
+        <ul>
+            <li><a href="#">Ver Tareas y Proyectos</a></li>
+            <li><a href="#">Subir Tareas</a></li>
+            <li><a href="#">Acceder a Exámenes</a></li>
+        </ul>
     </nav>
 
-    <div class="container">
-        <section id="verTareas">
-            <h2>Ver Tareas</h2>
-            <p>Aquí podrás revisar las tareas asignadas y entregarlas a tiempo.</p>
-            <button>Ver Mis Tareas</button>
-        </section>
-        
-        <section id="verProyectos">
-            <h2>Ver Proyectos</h2>
-            <p>Accede a los proyectos en los que estás inscrito y haz tu seguimiento.</p>
-            <button>Ver Proyectos</button>
-        </section>
-        
-        <section id="verExamenes">
-            <h2>Ver Exámenes</h2>
-            <p>Consulta los exámenes próximos y en qué fecha los debes presentar.</p>
-            <button>Ver Exámenes</button>
-        </section>
-        
-        <section id="verReuniones">
-            <h2>Ver Reuniones</h2>
-            <p>Consulta las reuniones de clase o tutorías que hayas programado.</p>
-            <button>Ver Reuniones</button>
-        </section>
-        
-        <section id="configuraciones">
-            <h2>Configuraciones</h2>
-            <p>Ajustes de tu perfil y preferencias como estudiante.</p>
-            <button>Editar Perfil</button>
-        </section>
-    </div>
-
     <footer>
-        <p>&copy; 2025 Plataforma Educativa</p>
+        <p>© 2025 Portal Educativo | Desarrollado para la institución</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
