@@ -1,178 +1,117 @@
 :root {
-    --color-primario: #4A148C;
-    --color-secundario: #7B1FA2;
-    --color-terciario: #BA68C8;
-    --color-destacado: #E040FB;
-    --color-fondo: #1A1A2E;
-    --degradado: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+    --color-profesor: #2c3e50;
+    --color-estudiante: #27ae60;
+    --color-footer: #34495e;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
-    background: var(--color-fondo);
-    color: white;
+    background: #f5f6fa;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.contenedor-principal {
+header {
+    background: linear-gradient(135deg, var(--color-profesor) 0%, #3498db 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.estudiante header {
+    background: linear-gradient(135deg, var(--color-estudiante) 0%, #2ecc71 100%);
+}
+
+.container {
+    flex: 1;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin: 2rem auto;
+    padding: 0 20px;
 }
 
-/* Logo Animado */
-.logo-container {
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
     text-align: center;
-    margin-bottom: 3rem;
-    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-    width: 120px;
-    height: 120px;
-    background: var(--degradado);
-    border-radius: 50%;
-    margin: 0 auto 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    animation: portal-glow 3s infinite;
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.logo i {
-    font-size: 3rem;
-    color: white;
-    z-index: 2;
-}
-
-.portal-effect {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 2px solid rgba(255,255,255,0.1);
-    animation: portal-rotate 8s linear infinite;
-}
-
-@keyframes portal-glow {
-    0% { box-shadow: 0 0 20px var(--color-primario); }
-    50% { box-shadow: 0 0 40px var(--color-destacado); }
-    100% { box-shadow: 0 0 20px var(--color-primario); }
-}
-
-@keyframes portal-rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-/* Selector de Rol */
-.selector-rol {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-}
-
-.tarjeta {
-    width: 300px;
-    height: 400px;
-    perspective: 1000px;
-}
-
-.tarjeta-content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.6s;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.tarjeta:hover .tarjeta-content {
-    transform: rotateY(10deg) rotateX(5deg) translateY(-10px);
-}
-
-.hover-effect {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-        45deg,
-        transparent 25%,
-        rgba(255,255,255,0.1) 50%,
-        transparent 75%
-    );
-    top: -50%;
-    left: -50%;
-    animation: efecto-brillo 3s infinite;
-}
-
-@keyframes efecto-brillo {
-    from { transform: rotate(45deg) translateX(-100%); }
-    to { transform: rotate(45deg) translateX(100%); }
-}
-
-/* Estilos de Tarjetas */
-.tarjeta .tarjeta-content {
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 2rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.tarjeta .icono {
-    width: 80px;
-    height: 80px;
-    background: var(--degradado);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-}
-
-.tarjeta h2 {
-    font-size: 1.8rem;
+.card i {
+    font-size: 2.5rem;
+    color: var(--color-profesor);
     margin-bottom: 1rem;
-    background: linear-gradient(45deg, var(--color-secundario), var(--color-destacado));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
-.tarjeta p {
-    color: rgba(255,255,255,0.8);
-    font-size: 1.1rem;
+body.estudiante .card i {
+    color: var(--color-estudiante);
 }
 
-/* Responsive Design */
+button {
+    background: var(--color-profesor);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+body.estudiante button {
+    background: var(--color-estudiante);
+}
+
+button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+footer {
+    background: var(--color-footer);
+    color: white;
+    padding: 2rem;
+    margin-top: auto;
+}
+
+.footer-info {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.animate__animated {
+    animation-duration: 1s;
+}
+
 @media (max-width: 768px) {
-    .contenedor-principal {
-        padding: 1rem;
+    .grid-container {
+        grid-template-columns: 1fr;
     }
     
-    .tarjeta {
-        width: 100%;
-        max-width: 350px;
-        height: 300px;
+    .card {
+        margin: 0 10px;
     }
 }
