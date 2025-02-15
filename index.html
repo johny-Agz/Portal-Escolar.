@@ -8,35 +8,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-            <div class="logo-icono">
-                <i class="fas fa-portal-enter"></i>
-            </div>
-            <h1>Portal Escolar</h1>
-        </div>
-    </header>
-
-    <main class="contenedor">
-        <div class="selector-rol">
-            <!-- Tarjeta Profesor -->
-            <div class="tarjeta-rol" onclick="redirigirAProfesor()">
-                <div class="icono-rol">
-                    <i class="fas fa-chalkboard-teacher"></i>
+    <div class="contenedor-principal">
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-door-open"></i>
+                    <div class="portal-effect"></div>
                 </div>
-                <h2>Acceso Docente</h2>
-                <p>30+ herramientas profesionales de enseñanza</p>
-                <div class="efecto-holografico"></div>
+                <h1>Portal Escolar</h1>
             </div>
+        </header>
 
-            <!-- Tarjeta Estudiante -->
-            <div class="tarjeta-rol" onclick="redirigirAEstudiante()">
-                <div class="icono-rol">
-                    <i class="fas fa-user-graduate"></i>
+        <main class="main-content">
+            <div class="selector-rol">
+                <!-- Tarjeta Profesor -->
+                <div class="tarjeta profesor" onclick="redirigirAProfesor()">
+                    <div class="tarjeta-content">
+                        <div class="icono">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h2>Profesor</h2>
+                        <p>Acceso a 30 herramientas profesionales</p>
+                        <div class="hover-effect"></div>
+                    </div>
                 </div>
-                <h2>Acceso Estudiantil</h2>
-                <p>15 recursos esenciales para tu aprendizaje</p>
-                <div class="efecto-holografico"></div>
+
+                <!-- Tarjeta Estudiante -->
+                <div class="tarjeta estudiante" onclick="redirigirAEstudiante()">
+                    <div class="tarjeta-content">
+                        <div class="icono">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h2>Estudiante</h2>
+                        <p>Acceso a 15 recursos esenciales</p>
+                        <div class="hover-effect"></div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
