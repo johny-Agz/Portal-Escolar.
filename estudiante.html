@@ -3,51 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Estudiantes - Liceo San José Upala</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Área de Estudiantes</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
-<body class="estudiante">
+<body>
     <header>
-        <h1 class="animate__animated animate__fadeInDown">PORTAL ESTUDIANTES</h1>
+        <h1>Área de Estudiantes</h1>
     </header>
 
-    <div class="container">
-        <div class="grid-container">
-            <!-- Herramientas generadas por JavaScript -->
-        </div>
+    <button class="tools-btn" onclick="toggleTools()">📚 Herramientas</button>
+    
+    <div id="tools-menu" class="hidden">
+        <ul>
+            <li><a href="#">Ver Tareas</a></li>
+            <li><a href="#">Acceder a Material</a></li>
+            <li><a href="#">Unirse a Reuniones</a></li>
+            <li><a href="#">Ver Notas</a></li>
+        </ul>
     </div>
 
-    <footer>
-        <div class="footer-info">
-            <p>Creador: Johny Alonso Gutiérrez Zambrana</p>
-            <p>Contacto: +506 61262405</p>
-            <p>"PORTAL ESCOLAR" del Liceo San Jose Upala</p>
-            <p>Plataforma integral para gestión educativa con herramientas digitales para enseñanza y aprendizaje.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
     <script>
-        // Generar 15 herramientas para estudiantes
-        const herramientasEstudiante = [
-            'Tareas Digitales', 'Calificaciones', 'Horario Clases', 'Material de Estudio',
-            'Exámenes en Línea', 'Foro Estudiantil', 'Biblioteca Virtual', 'Proyectos Grupales',
-            'Mensajería Interna', 'Portafolio Digital', 'Actividades Extracurriculares',
-            'Solicitud de Documentos', 'Calendario de Eventos', 'Recursos Multimedia',
-            'Sistema de Alertas'
-        ];
-
-        const gridContainer = document.querySelector('.grid-container');
-        herramientasEstudiante.forEach((herramienta, index) => {
-            gridContainer.innerHTML += `
-                <div class="card animate__animated animate__fadeInUp" style="animation-delay: ${index * 0.1}s">
-                    <i class="fas fa-user-graduate"></i>
-                    <h3>${herramienta}</h3>
-                    <button class="btn-estudiante">Acceder <i class="fas fa-arrow-right"></i></button>
-                </div>
-            `;
-        });
+        function toggleTools() {
+            document.getElementById("tools-menu").classList.toggle("hidden");
+        }
     </script>
 </body>
 </html>
