@@ -12,4 +12,3 @@ function toggleMenu() {
     } else {
         menu.style.display = "block";
     }
-}
