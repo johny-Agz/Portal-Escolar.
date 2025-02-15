@@ -4,31 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Educativo</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1 class="fade-in">Bienvenido al Portal Educativo</h1>
+        <h1>Portal Educativo</h1>
     </header>
 
-    <section class="banner">
-        <h2 class="slide-in">Facilitando el aprendizaje con herramientas digitales</h2>
-    </section>
-
-    <section class="choose-role">
-        <h2>Selecciona tu perfil</h2>
-        <p>Elige si eres Profesor o Estudiante para acceder a las funciones adecuadas.</p>
-        <div class="button-container">
-            <button class="btn" onclick="setRole('profesor')">👨‍🏫 Soy Profesor</button>
-            <button class="btn" onclick="setRole('estudiante')">📚 Soy Estudiante</button>
+    <section class="welcome">
+        <h2>Bienvenido</h2>
+        <p>Selecciona tu perfil para continuar:</p>
+        <div class="buttons">
+            <button id="btn-profesor">Soy Profesor</button>
+            <button id="btn-estudiante">Soy Estudiante</button>
         </div>
     </section>
 
     <footer>
-        <p>© 2025 Portal Educativo | Desarrollado para la institución</p>
+        <p>© 2025 Portal Educativo</p>
     </footer>
 </body>
 </html>
