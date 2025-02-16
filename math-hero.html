@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Hero - Instituto Stark</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .background-animate {
+            background: linear-gradient(270deg, #000000, #1a1a1a);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .enemy {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .laser {
+            animation: glow 1s ease-in-out infinite;
+        }
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 5px #00c6ff, 0 0 10px #00c6ff; }
+            50% { box-shadow: 0 0 20px #00c6ff, 0 0 30px #00c6ff; }
+        }
+        .power-bar {
+            transition: width 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="background-animate min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Barra superior -->
+        <div class="flex justify-between items-center mb-8">
+            <a href="estudiante.html" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Volver al Dashboard
+            </a>
+            <div class="flex items-center gap-4">
+                <div class="bg-gray-900 px-4 py-2 rounded border border-blue-500">
+                    <span class="font-bold">Nivel: </span>
+                    <span id="level">1</span>
+                </div>
+                <div class="bg-gray-900 px-4 py-2 rounded border border-blue-500">
+                    <span class="font-bold">Puntos: </span>
+                    <span id="score">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Área de juego -->
+        <div class="bg-gray-900 rounded-lg p-8 border-2 border-blue-500 mb-8">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold text-blue-500 mb-4">Math Hero</h1>
+                <p class="text-gray-400">Resuelve problemas matemáticos para derrotar a los enemigos</p>
+            </div>
+
+            <!-- Área de combate -->
+            <div class="relative h-96 bg-black bg-opacity-50 rounded-lg p-4 mb-8">
+                <!-- Jugador -->
+                <div class="absolute bottom-4 left-4">
+                    <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <!-- Enemigo -->
+                <div id="enemy" class="enemy absolute top-4 right-4">
+                    <div class="w-20 h-20 bg-red-500 rounded-full flex items-center justify-center">
+                        <span id="problem" class="text-xl font-bold">6 × 7</span>
+                    </div>
+                </div>
+                <!-- Láser -->
+                <div id="laser" class="laser hidden absolute h-2 bg-blue-500 rounded"></div>
+            </div>
+
+            <!-- Panel de control -->
+            <div class="bg-black bg-opacity-50 rounded-lg p-4">
+                <div class="mb-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span>Poder:</span>
+                        <div class="w-full ml-4 bg-gray-700 rounded-full h-4">
+                            <div id="powerBar" class="power-bar bg-blue-500 rounded-full h-4" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 gap-4">
+                    <input type="number" id="answer" class="bg-gray-800 border border-blue-500 rounded px-4 py-2 text-white" placeholder="Escribe tu respuesta...">
+                    <button id="shoot" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                        Disparar (Enter)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const problems = [
+            { expression: '6 × 7', answer: 42 },
+            { expression: '8 × 9', answer: 72 },
+            { expression: '12 × 5', answer: 60 },
+            { expression: '15 × 4', answer: 60 },
+            { expression: '9 × 6', answer: 54 },
+            { expression: '7 × 8', answer: 56 },
+            { expression: '11 × 3', answer: 33 },
+            { expression: '16 × 4', answer: 64 },
+            { expression: '13 × 5', answer: 65 },
+            { expression: '14 × 6', answer: 84 }
+        ];
+
+        let currentLevel = 1;
+        let score = 0;
+        let currentProblem = null;
+
+        const levelEl = document.getElementById('level');
+        const scoreEl = document.getElementById('score');
+        const problemEl = document.getElementById('problem');
+        const answerEl = document.getElementById('answer');
+        const shootBtn = document.getElementById('shoot');
+        const laserEl = document.getElementById('laser');
+        const powerBarEl = document.getElementById('powerBar');
+        const enemyEl = document.getElementById('enemy');
+
+        function getRandomProblem() {
+            const index = Math.floor(Math.random() * problems.length);
+            return problems[index];
+        }
+
+        function updateProblem() {
+            currentProblem = getRandomProblem();
+            problemEl.textContent = currentProblem.expression;
+        }
+
+        function shootLaser() {
+            laserEl.style.display = 'block';
+            const playerRect = document.querySelector('.absolute.bottom-4.left-4').getBoundingClientRect();
+            const enemyRect = enemyEl.getBoundingClientRect();
+            
+            laserEl.style.width = `${enemyRect.left - playerRect.right}px`;
+            laserEl.style.left = `${playerRect.right - playerRect.left}px`;
+            laserEl.style.top = `${playerRect.top - playerRect.top + 40}px`;
+            
+            setTimeout(() => {
+                laserEl.style.display = 'none';
+            }, 1000);
+        }
+
+        function checkAnswer() {
+            const userAnswer = parseInt(answerEl.value);
+            if (userAnswer === currentProblem.answer) {
+                score += 100;
+                scoreEl.textContent = score;
+                shootLaser();
+                
+                if (score % 500 === 0) {
+                    currentLevel++;
+                    levelEl.textContent = currentLevel;
+                }
+                
+                answerEl.value = '';
+                updateProblem();
+            } else {
+                powerBarEl.style.width = `${parseInt(powerBarEl.style.width) - 20}%`;
+                if (parseInt(powerBarEl.style.width) <= 0) {
+                    alert('¡Game Over! Tu puntuación final: ' + score);
+                    resetGame();
+                }
+            }
+        }
+
+        function resetGame() {
+            currentLevel = 1;
+            score = 0;
+            levelEl.textContent = currentLevel;
+            scoreEl.textContent = score;
+            powerBarEl.style.width = '100%';
+            answerEl.value = '';
+            updateProblem();
+        }
+
+        shootBtn.addEventListener('click', checkAnswer);
+        answerEl.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                checkAnswer();
+            }
+        });
+
+        updateProblem();
+    </script>
+</body>
+</html>
