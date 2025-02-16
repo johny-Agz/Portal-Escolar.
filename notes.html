@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Apuntes - Instituto Stark</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .background-animate {
+            background: linear-gradient(270deg, #000000, #1a1a1a);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .note-card {
+            transition: transform 0.3s ease;
+        }
+        .note-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="background-animate min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Barra superior -->
+        <div class="flex justify-between items-center mb-8">
+            <a href="estudiante.html" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Volver al Dashboard
+            </a>
+            <button id="newNoteBtn" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                Nueva Nota
+            </button>
+        </div>
+
+        <!-- Área principal -->
+        <div class="grid grid-cols-12 gap-6">
+            <!-- Lista de notas -->
+            <div class="col-span-12 md:col-span-4 lg:col-span-3">
+                <div class="bg-gray-900 rounded-lg p-4 border border-blue-500">
+                    <h2 class="text-xl font-bold mb-4">Mis Notas</h2>
+                    <div id="notesList" class="space-y-2">
+                        <!-- Las notas se cargarán aquí dinámicamente -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Editor de notas -->
+            <div class="col-span-12 md:col-span-8 lg:col-span-9">
+                <div class="bg-gray-900 rounded-lg p-4 border border-blue-500">
+                    <div class="mb-4">
+                        <input type="text" id="noteTitle" placeholder="Título de la nota" 
+                               class="w-full bg-gray-800 border border-blue-500 rounded px-4 py-2 text-white mb-2">
+                        <div class="flex gap-2 mb-2">
+                            <button onclick="formatText('bold')" class="px-2 py-1 bg-gray-800 rounded hover:bg-gray-700">B</button>
+                            <button onclick="formatText('italic')" class="px-2 py-1 bg-gray-800 rounded hover:bg-gray-700">I</button>
+                            <button onclick="formatText('underline')" class="px-2 py-1 bg-gray-800 rounded hover:bg-gray-700">U</button>
+                        </div>
+                    </div>
+                    <textarea id="noteContent" placeholder="Escribe tu nota aquí..." 
+                              class="w-full h-96 bg-gray-800 border border-blue-500 rounded px-4 py-2 text-white"></textarea>
+                    <div class="flex justify-end mt-4 gap-2">
+                        <button id="saveNote" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                            Guardar
+                        </button>
+                        <button id="deleteNote" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+                            Eliminar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentNoteId = null;
+        let notes = JSON.parse(localStorage.getItem('notes') || '[]');
+
+        function updateNotesList() {
+            const notesList = document.getElementById('notesList');
+            notesList.innerHTML = '';
+            notes.forEach(note => {
+                const noteElement = document.createElement('div');
+                noteElement.className = 'note-card bg-gray-800 p-2 rounded cursor-pointer hover:bg-gray-700';
+                noteElement.innerHTML = `
+                    <h3 class="font-bold">${note.title || 'Sin título'}</h3>
+                    <p class="text-sm text-gray-400">${note.date}</p>
+                `;
+                noteElement.onclick = () => loadNote(note.id);
+                notesList.appendChild(noteElement);
+            });
+        }
+
+        function loadNote(id) {
+            const note = notes.find(n => n.id === id);
+            if (note) {
+                currentNoteId = id;
+                document.getElementById('noteTitle').value = note.title;
+                document.getElementById('noteContent').value = note.content;
+            }
+        }
+
+        function formatText(command) {
+            const textarea = document.getElementById('noteContent');
+            const start = textarea.selectionStart;
+            const end = textarea.selectionEnd;
+            const text = textarea.value;
+            
+            let prefix = '';
+            switch(command) {
+                case 'bold': prefix = '**'; break;
+                case 'italic': prefix = '*'; break;
+                case 'underline': prefix = '_'; break;
+            }
+            
+            const newText = text.substring(0, start) + 
+                           prefix + text.substring(start, end) + prefix +
+                           text.substring(end);
+            
+            textarea.value = newText;
+        }
+
+        document.getElementById('newNoteBtn').onclick = () => {
+            currentNoteId = null;
+            document.getElementById('noteTitle').value = '';
+            document.getElementById('noteContent').value = '';
+        };
+
+        document.getElementById('saveNote').onclick = () => {
+            const title = document.getElementById('noteTitle').value;
+            const content = document.getElementById('noteContent').value;
+            const date = new Date().toLocaleDateString();
+
+            if (currentNoteId) {
+                const index = notes.findIndex(n => n.id === currentNoteId);
+                if (index !== -1) {
+                    notes[index] = { ...notes[index], title, content, date };
+                }
+            } else {
+                notes.push({
+                    id: Date.now(),
+                    title,
+                    content,
+                    date
+                });
+            }
+
+            localStorage.setItem('notes', JSON.stringify(notes));
+            updateNotesList();
+        };
+
+        document.getElementById('deleteNote').onclick = () => {
+            if (currentNoteId) {
+                notes = notes.filter(n => n.id !== currentNoteId);
+                localStorage.setItem('notes', JSON.stringify(notes));
+                updateNotesList();
+                currentNoteId = null;
+                document.getElementById('noteTitle').value = '';
+                document.getElementById('noteContent').value = '';
+            }
+        };
+
+        // Inicializar la lista de notas
+        updateNotesList();
+    </script>
+</body>
+</html>
